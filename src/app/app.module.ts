@@ -5,7 +5,10 @@ import {AppComponent} from "./app.component";
 import {TaskListComponent} from "./todo/components/task-list.component";
 import {AboutComponent} from "./about/components/about.component";
 import {TaskComponent} from "./todo/components/task.component";
-//import {FundsComponent} from "./funds/components/funds.component";
+
+import {FundsComponent} from "./funds/components/funds.component";
+import {FundService} from "./funds/components/fund.service";
+
 
 import {routing, appRoutingProviders} from './app.routing';
 import {FormsModule} from "@angular/forms";
@@ -21,10 +24,11 @@ import {FormsModule} from "@angular/forms";
         TaskComponent,
         TaskListComponent,
         AboutComponent,
-//	FundsComponent
+	FundsComponent
     ],
     providers: [
-        appRoutingProviders
+        appRoutingProviders,
+	FundService
     ],
     bootstrap: [AppComponent]
 })
