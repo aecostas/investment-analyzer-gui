@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {OnInit} from "@angular/core";
-import {FundService} from './fund.service';
+import {FundService} from '../services/fund.service';
 
 console.log("outside...");
 @Component({

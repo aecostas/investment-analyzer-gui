@@ -8,7 +8,7 @@ import {AboutComponent} from "./about/components/about.component";
 import {TaskComponent} from "./todo/components/task.component";
 
 import {FundsComponent} from "./funds/components/funds.component";
-import {FundService} from "./funds/components/fund.service";
+import {FundService} from "./funds/services/fund.service";
 
 
 import {routing, appRoutingProviders} from './app.routing';
