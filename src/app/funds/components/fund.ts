@@ -1,6 +1,4 @@
 export class Fund {
-    sectors: Object[];
-    regions: Object[];
     name: string;
     isin: string;
 }
