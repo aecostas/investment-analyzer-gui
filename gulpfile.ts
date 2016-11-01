@@ -4,7 +4,9 @@ const gulp = require("gulp");
 const del = require("del");
 const tsc = require("gulp-typescript");
 const sourcemaps = require('gulp-sourcemaps');
-const tsProject = tsc.createProject("tsconfig.json");
+const tsProject = tsc.createProject("tsconfig.json", {
+    typescript: require('typescript')
+});
 const tslint = require('gulp-tslint');
 
 /**
@@ -50,14 +52,16 @@ gulp.task("resources", () => {
  */
 gulp.task("libs", () => {
     return gulp.src([
-            'core-js/client/shim.min.js',
-            'systemjs/dist/system-polyfills.js',
-            'systemjs/dist/system.src.js',
-            'reflect-metadata/Reflect.js',
-            'rxjs/**/*.js',
-            'zone.js/dist/**',
-            '@angular/**/bundles/**'
-        ], {cwd: "node_modules/**"}) /* Glob required here. */
+        'core-js/client/shim.min.js',
+        'systemjs/dist/system-polyfills.js',
+        'systemjs/dist/system.src.js',
+        'reflect-metadata/Reflect.js',
+        'rxjs/**/*.js',
+        'zone.js/dist/**',
+        '@angular/**/bundles/**',
+	'ng2-bootstrap/**/bundles/**',
+	'moment/moment.js'
+    ], {cwd: "node_modules/**"}) /* Glob required here. */
         .pipe(gulp.dest("build/lib"));
 });
 

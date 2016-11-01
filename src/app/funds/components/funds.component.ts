@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
 import {OnInit} from "@angular/core";
 import {FundService} from '../services/fund.service';
+//import {AlertComponent } from 'ng2-bootstrap/ng2-bootstrap';
 
 console.log("outside...");
 @Component({
