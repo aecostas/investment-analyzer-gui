@@ -1,0 +1,9 @@
+Search panel!!!
+
+<ng2-slider
+   min="6"
+   max="23"
+   startValue="9"
+   endValue="21"
+   stepValue="2">
+</ng2-slider>

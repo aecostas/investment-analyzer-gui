@@ -1,11 +1,24 @@
-<alert dismissOnTimeout="3000">This alert will dismiss in 3s</alert>
+<div class="container-fluid">
 
-<h1>List of Funds</h1>
+  <div class="row">
+    <div class="col-md-3">
+      <fund-search> </fund-search>      
+    </div> <!-- col -->
 
-<ul>
-  <li class="card" *ngFor="let fund of funds">
-    {{fund.name}}
-  </li>
-</ul>
+    <div class="col-md-3">
+      search results
+      <ul>
+	<li class="card" *ngFor="let fund of funds">
+	  {{fund.name}}
+	</li>
+      </ul>
 
+    </div>
 
+    <div class="col-md-6">
+      current portfolio
+    </div>
+    
+  </div> <!-- row  -->
+  
+</div> 

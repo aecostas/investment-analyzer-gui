@@ -21,6 +21,9 @@
             // other libraries
 	    'moment': 'npm:moment/moment.js',
 	    'ng2-bootstrap/ng2-bootstrap': 'npm:ng2-bootstrap/bundles/ng2-bootstrap.umd.js',
+	    'ng2-slider-component' :      'npm:ng2-slider-component',
+	    'ng2-slideable-directive':    'npm:ng2-slideable-directive',
+	    'ng2-styled-directive':       'npm:ng2-styled-directive',
             'rxjs': 'npm:rxjs'
         },
         // packages tells the System loader how to load when no filename and/or no extension
@@ -34,7 +37,23 @@
             },
 	    "node_modules/ng2-bootstrap": {
 		"defaultExtension": "js"
+	    },
+	    'ng2-slider-component': {
+		main: './ng2-slider.component.system.js',
+		defaultExtension: 'system.js'
+	    },
+	    'ng2-slideable-directive': {
+		main: './slideable.directive.js',
+		defaultExtension: 'js'
+	    },
+	    'ng2-styled-directive': {
+		main: './ng2-styled.directive.js',
+		defaultExtension: 'js'
 	    }
+	    // 'node-modules/ng2-slider-component': {
+	    // 	main: 'ng2-slider.component.system.js',
+	    // 	defaultExtension: 'system.js'
+	    // },
         }
 	
     });

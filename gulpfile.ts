@@ -60,8 +60,11 @@ gulp.task("libs", () => {
         'zone.js/dist/**',
         '@angular/**/bundles/**',
 	'ng2-bootstrap/**/bundles/**',
-	'moment/moment.js'
-    ], {cwd: "node_modules/**"}) /* Glob required here. */
+	'moment/moment.js',
+	'ng2-slider-component/**',
+	'ng2-slideable-directive/**',
+	'ng2-styled-directive/**'
+], {cwd: "node_modules/**"}) /* Glob required here. */
         .pipe(gulp.dest("build/lib"));
 });
 
