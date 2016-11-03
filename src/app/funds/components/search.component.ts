@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {OnInit} from "@angular/core";
-import { Ng2SliderComponent } from 'ng2-slider-component/ng2-slider.component';
+import {Ng2SliderComponent} from 'ng2-slider-component/ng2-slider.component';
 
 @Component({
     selector: 'fund-search',
@@ -10,13 +10,18 @@ import { Ng2SliderComponent } from 'ng2-slider-component/ng2-slider.component';
 export class SearchComponent implements OnInit {
     regions: String[];
     sectors: String[];
+    timeoutID: Number;
     
     constructor() {
+	this.timeoutID = null;
+	
 	// United States, Latin America, Eurozone,
 	// Europe Emerging, Middle East, Australasia
 	// Asia Emerging, Canada, United Kingdom,
 	// Europe ex-euro, Africa, Japan, Asia Developed
 	this.regions = ['US', 'LA', 'EU', 'EE', 'ME', 'AU', 'AE', 'CA', 'UK', 'EX', 'AF', 'JA', 'AD'];
+
+	// TODO: regions={US:50}
 
 	// Cyclical: basic materials, consumer cyclical, financial services, real estate
 	// Defensive: consumer defensive, healthcare, utilities
@@ -27,8 +32,17 @@ export class SearchComponent implements OnInit {
     ngOnInit() {
     }
 
-    valueChanged(event, region) {
-	console.warn("New value for region: ", region);
+    valueChanged(event, field, region) {
+	clearTimeout(this.timeoutID);
+	console.warn("New value for : ", field, region);
+	this.lastChanged = new Date();
+	this.timeoutID = setTimeout(() => this.populate(), 2000);
     }
 
+    populate() {
+	// trigger current selection
+	console.warn("triggering changes");
+    }
+
+    
 }

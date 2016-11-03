@@ -1,32 +1,33 @@
-<div class="row" *ngFor="let region of regions" >
+<div class="container-fluid">
+  <div class="row" *ngFor="let region of regions" >
+    
+    <div class="col-md-4 region-title"> {{region}} </div>
+    
+    <div class="col-md-8">
+      <ng2-slider
+	 min="1"
+	 max="100"
+	 value="50"
+	 (onRangeChanged)="valueChanged($event, 'region', region)">
+      </ng2-slider>
+    </div>
+    
+  </div>
   
-  <div class="col-md-4"> {{region}} </div>
-  
-  <div class="col-md-8">
-    <ng2-slider
-       min="1"
-       max="100"
-       value="50"
-       (onRangeChanged)="valueChanged($event, region)">
-    </ng2-slider>
+
+  <div class="row" *ngFor="let sector of sectors">
+    
+    <div class="col-md-4"> {{sector}} </div>
+    
+    <div class="col-md-8">
+      <ng2-slider
+	 min="1"
+	 max="100"
+	 value="50"
+	 (onRangeChanged)="valueChanged($event, 'sector', sector)">
+      </ng2-slider>
+    </div>
+    
   </div>
   
 </div>
-
-
-<div class="row" *ngFor="let sector of sectors">
-
-  <div class="col-md-4"> {{sector}} </div>
-
-  <div class="col-md-8">
-    <ng2-slider
-       min="1"
-       max="100"
-       value="50"
-       (onRangeChanged)="valueChanged($event, sector)">
-    </ng2-slider>
-  </div>
-  
-</div>
-
-
