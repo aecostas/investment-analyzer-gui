@@ -13,8 +13,12 @@ export class FundsComponent implements OnInit {
 
     ngOnInit() {
 	console.warn("funds.component constructor...");
-	this.fundService.getFunds()
-	    .subscribe(data => this.funds = data);
+//	this.fundService.getFunds()
+//	    .subscribe(data => this.funds = data);
 
+    }
+
+    handleSearchEvent(arg) {
+	console.warn("Handling search event in fund: ", arg);
     }
 }

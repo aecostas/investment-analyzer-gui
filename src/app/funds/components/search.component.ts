@@ -1,5 +1,8 @@
 import {Component} from "@angular/core";
 import {OnInit} from "@angular/core";
+import {EventEmitter} from "@angular/core";
+import {Output} from "@angular/core";
+
 import {Ng2SliderComponent} from 'ng2-slider-component/ng2-slider.component';
 
 @Component({
@@ -8,13 +11,16 @@ import {Ng2SliderComponent} from 'ng2-slider-component/ng2-slider.component';
     styleUrls: ['./app/funds/components/search.css']
 })
 export class SearchComponent implements OnInit {
+    @Output() searchevent: EventEmitter<any> = new EventEmitter();
+    private timeoutID;
+    
     regions: String[];
     sectors: String[];
-    timeoutID: Number;
+    lastChanged: Date;
     
     constructor() {
 	this.timeoutID = null;
-	
+
 	// United States, Latin America, Eurozone,
 	// Europe Emerging, Middle East, Australasia
 	// Asia Emerging, Canada, United Kingdom,
@@ -45,7 +51,7 @@ export class SearchComponent implements OnInit {
     populate() {
 	// trigger current selection
 	console.warn("triggering changes");
+	this.searchevent.next(['dummy']);
     }
 
-    
 }
