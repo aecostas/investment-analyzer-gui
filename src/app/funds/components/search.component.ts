@@ -13,11 +13,13 @@ import {Ng2SliderComponent} from 'ng2-slider-component/ng2-slider.component';
 export class SearchComponent implements OnInit {
     @Output() searchevent: EventEmitter<any> = new EventEmitter();
     private timeoutID;
-    
+    private lastChanged: Date;
+    private pattern;
+    private sectors_out;
+
     regions: String[];
     sectors: String[];
-    lastChanged: Date;
-    
+
     constructor() {
 	this.timeoutID = null;
 
@@ -27,6 +29,36 @@ export class SearchComponent implements OnInit {
 	// Europe ex-euro, Africa, Japan, Asia Developed
 	this.regions = ['US', 'LA', 'EU', 'EE', 'ME', 'AU', 'AE', 'CA', 'UK', 'EX', 'AF', 'JA', 'AD'];
 
+	this.pattern = {};
+	this.pattern.region = {};
+	this.pattern.region['US'] = 50;
+	this.pattern.region['LA'] = 50;
+	this.pattern.region['EU'] = 50;
+	this.pattern.region['EE'] = 50;
+	this.pattern.region['ME'] = 50;
+	this.pattern.region['AU'] = 50;
+	this.pattern.region['AE'] = 50;
+	this.pattern.region['CA'] = 50;
+	this.pattern.region['UK'] = 50;
+	this.pattern.region['EX'] = 50;
+	this.pattern.region['AF'] = 50;
+	this.pattern.region['JA'] = 50;
+	this.pattern.region['AD'] = 50;
+
+	this.pattern.sector = {};
+	this.pattern.sector['BMAT'] = 50;
+	this.pattern.sector['CCYC'] = 50;
+	this.pattern.sector['FSER'] = 50;
+	this.pattern.sector['REST'] = 50;
+	this.pattern.sector['CDEF'] = 50;
+	this.pattern.sector['HEAL'] = 50;
+	this.pattern.sector['UTIL'] = 50;
+	this.pattern.sector['COMM'] = 50;
+	this.pattern.sector['ENER'] = 50;
+	this.pattern.sector['INDU'] = 50;
+	this.pattern.sector['TECH'] = 50;
+
+	
 	// TODO: regions={US:50}
 
 	// Cyclical: basic materials, consumer cyclical,
@@ -36,22 +68,21 @@ export class SearchComponent implements OnInit {
 	// Sensitive: communication services, energy,
 	//            industrials, technology
 	this.sectors = ['BMAT', 'CCYC', 'FSER', 'REST', 'CDEF', 'HEAL', 'UTIL', 'COMM', 'ENER', 'INDU', 'TECH'];
+
     }
 
     ngOnInit() {
     }
 
-    valueChanged(event, field, region) {
+    valueChanged(event, field, code) {
 	clearTimeout(this.timeoutID);
-	console.warn("New value for : ", field, region);
+	this.pattern[field][code] = Number(event.startValue);
 	this.lastChanged = new Date();
 	this.timeoutID = setTimeout(() => this.populate(), 2000);
     }
 
     populate() {
-	// trigger current selection
-	console.warn("triggering changes");
-	this.searchevent.next(['dummy']);
+	this.searchevent.next(this.pattern);
     }
 
 }
