@@ -23,9 +23,12 @@ export class SearchComponent implements OnInit {
 
 	// TODO: regions={US:50}
 
-	// Cyclical: basic materials, consumer cyclical, financial services, real estate
-	// Defensive: consumer defensive, healthcare, utilities
-	// Sensitive: communication services, energy, industrials, technology
+	// Cyclical: basic materials, consumer cyclical,
+	//           financial services, real estate
+	// Defensive: consumer defensive, healthcare,
+	//            utilities
+	// Sensitive: communication services, energy,
+	//            industrials, technology
 	this.sectors = ['BMAT', 'CCYC', 'FSER', 'REST', 'CDEF', 'HEAL', 'UTIL', 'COMM', 'ENER', 'INDU', 'TECH'];
     }
 
