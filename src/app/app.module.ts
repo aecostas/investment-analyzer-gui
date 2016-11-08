@@ -1,6 +1,7 @@
 import {NgModule}      from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpModule} from '@angular/http';
+import {JsonpModule} from '@angular/http';
 import {Ng2BootstrapModule} from 'ng2-bootstrap/ng2-bootstrap';
 import {Ng2SliderComponent} from 'ng2-slider-component/ng2-slider.component';
 import { Ng2StyledDirective } from 'ng2-styled-directive/ng2-styled.directive';
@@ -25,6 +26,7 @@ import {FormsModule} from "@angular/forms";
         BrowserModule,
         FormsModule,
 	HttpModule,
+	JsonpModule,
         routing,
 	Ng2BootstrapModule
     ],

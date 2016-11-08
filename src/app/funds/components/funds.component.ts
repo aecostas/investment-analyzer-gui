@@ -1,24 +1,31 @@
 import {Component} from "@angular/core";
 import {OnInit} from "@angular/core";
+import {NgZone} from '@angular/core';
+
 import {FundService} from '../services/fund.service';
 
 @Component({
     templateUrl: './app/funds/components/funds.html'
 })
 export class FundsComponent implements OnInit {
-    funds: Object[];
+    funds: Array<Object>;
     
-    constructor(private fundService: FundService) {
+    constructor(private fundService: FundService, private zone:NgZone) {
     }
 
     ngOnInit() {
-	console.warn("funds.component constructor...");
-//	this.fundService.getFunds()
-//	    .subscribe(data => this.funds = data);
-
+	this.funds = [];
     }
 
     handleSearchEvent(arg) {
 	console.warn("Handling search event in fund: ", arg);
+	this.fundService.getFunds()
+	    .subscribe(data => {
+		this.funds = data;
+		console.warn(data);
+		this.zone.run(() => {
+		    console.log('hack for refreshing');
+		});
+	    );
     }
 }

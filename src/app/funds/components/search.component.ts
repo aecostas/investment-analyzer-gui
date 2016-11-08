@@ -29,6 +29,16 @@ export class SearchComponent implements OnInit {
 	// Europe ex-euro, Africa, Japan, Asia Developed
 	this.regions = ['US', 'LA', 'EU', 'EE', 'ME', 'AU', 'AE', 'CA', 'UK', 'EX', 'AF', 'JA', 'AD'];
 
+	// Cyclical: basic materials, consumer cyclical,
+	//           financial services, real estate
+	// Defensive: consumer defensive, healthcare,
+	//            utilities
+	// Sensitive: communication services, energy,
+	//            industrials, technology
+	this.sectors = ['BMAT', 'CCYC', 'FSER', 'REST', 'CDEF', 'HEAL', 'UTIL', 'COMM', 'ENER', 'INDU', 'TECH'];
+
+	// TODO: unify this.pattern.region and this.regions (same for sectors)
+	// , that is, feed the template with the JSON
 	this.pattern = {};
 	this.pattern.region = {};
 	this.pattern.region['US'] = 50;
@@ -58,16 +68,6 @@ export class SearchComponent implements OnInit {
 	this.pattern.sector['INDU'] = 50;
 	this.pattern.sector['TECH'] = 50;
 
-	
-	// TODO: regions={US:50}
-
-	// Cyclical: basic materials, consumer cyclical,
-	//           financial services, real estate
-	// Defensive: consumer defensive, healthcare,
-	//            utilities
-	// Sensitive: communication services, energy,
-	//            industrials, technology
-	this.sectors = ['BMAT', 'CCYC', 'FSER', 'REST', 'CDEF', 'HEAL', 'UTIL', 'COMM', 'ENER', 'INDU', 'TECH'];
 
     }
 
