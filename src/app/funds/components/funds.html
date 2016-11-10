@@ -1,5 +1,5 @@
 <div class="container-fluid">
-
+  
   <div class="row">
     <div class="col-md-3">
       <fund-search (searchevent)="handleSearchEvent($event)"> </fund-search>      
@@ -8,17 +8,19 @@
     <div class="col-md-3">
       search results
       <ul>
-	<li class="card" *ngFor="let fund of funds">
-	  {{fund.name}}
+	<li>
+	  <fund [data]="fund" *ngFor="let fund of funds"></fund>
 	</li>
+	<!-- <li class="card" *ngFor="let fund of funds"> -->
+	<!--   {{fund.name}} -->
+	<!-- </li> -->
       </ul>
-
     </div>
 
     <div class="col-md-6">
       current portfolio
     </div>
-    
+
   </div> <!-- row  -->
-  
-</div> 
+
+</div>

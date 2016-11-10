@@ -14,6 +14,7 @@ import {TaskComponent} from "./todo/components/task.component";
 import {SearchComponent} from "./funds/components/search.component";
 
 import {FundsComponent} from "./funds/components/funds.component";
+import {FundComponent} from "./funds/components/fund.component";
 
 import {FundService} from "./funds/services/fund.service";
 
@@ -36,6 +37,7 @@ import {FormsModule} from "@angular/forms";
         TaskListComponent,
         AboutComponent,
 	FundsComponent,
+	FundComponent,
 	SearchComponent,
 	SlideAbleDirective,
 	Ng2StyledDirective,

@@ -16,16 +16,17 @@ export class FundsComponent implements OnInit {
     ngOnInit() {
 	this.funds = [];
     }
-
+    
     handleSearchEvent(arg) {
 	console.warn("Handling search event in fund: ", arg);
 	this.fundService.getFunds()
 	    .subscribe(data => {
 		this.funds = data;
-		console.warn(data);
+		// TODO: find out why this is needed
 		this.zone.run(() => {
 		    console.log('hack for refreshing');
 		});
-	    );
+	    });	
     }
 }
+    
