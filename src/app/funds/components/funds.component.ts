@@ -17,9 +17,15 @@ export class FundsComponent implements OnInit {
     ngOnInit() {
 	this.funds = [];
 	this.isins = [];
-    }
 
+	this.fundService.createPortfolio()   
+	    .then(data => {
+		console.warn("created portfolio: ", data);
+	    });	
+    }
+    
     handleSelectedFundEvent(isin) {
+	console.warn("Adding isin: ", this.isins);
 	this.isins.push(isin);
     }
 
