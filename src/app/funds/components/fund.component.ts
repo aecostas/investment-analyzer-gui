@@ -1,7 +1,9 @@
 import {Component} from "@angular/core";
 import {Input} from "@angular/core";
+import {Output} from "@angular/core";
 import {OnInit} from "@angular/core";
-import { Fund } from '../models/fund';
+import {EventEmitter} from "@angular/core";
+import {Fund} from '../models/fund';
 
 @Component({
     selector: 'fund',
@@ -9,11 +11,15 @@ import { Fund } from '../models/fund';
 })
 export class FundComponent implements OnInit {
     @Input('data') data: Fund;
-    
+    @Output() selectevent: EventEmitter<any> = new EventEmitter();
+
     constructor() {
     }
 
     ngOnInit() {
     }
 
+    handleSelectFund(isin) {
+	this.selectevent.next(isin);
+    }
 }

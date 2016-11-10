@@ -9,16 +9,21 @@ import {FundService} from '../services/fund.service';
 })
 export class FundsComponent implements OnInit {
     funds: Array<Object>;
+    isins: Array<String>;
     
     constructor(private fundService: FundService, private zone:NgZone) {
     }
 
     ngOnInit() {
 	this.funds = [];
+	this.isins = [];
     }
-    
+
+    handleSelectedFundEvent(isin) {
+	this.isins.push(isin);
+    }
+
     handleSearchEvent(arg) {
-	console.warn("Handling search event in fund: ", arg);
 	this.fundService.getFunds()
 	    .subscribe(data => {
 		this.funds = data;
