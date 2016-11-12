@@ -10,6 +10,7 @@ import {FundService} from '../services/fund.service';
 export class FundsComponent implements OnInit {
     funds: Array<Object>;
     isins: Array<String>;
+    portfolio: String;
     
     constructor(private fundService: FundService, private zone:NgZone) {
     }
@@ -21,12 +22,18 @@ export class FundsComponent implements OnInit {
 	this.fundService.createPortfolio()   
 	    .then(data => {
 		console.warn("created portfolio: ", data);
+		this.portfolio = data;
 	    });	
     }
-    
+
     handleSelectedFundEvent(isin) {
 	console.warn("Adding isin: ", this.isins);
 	this.isins.push(isin);
+
+	this.fundService.addFundToPortfolio(this.portfolio, isin, 1000)
+	    .then(data => {
+		console.warn(data);
+	    });
     }
 
     handleSearchEvent(arg) {
