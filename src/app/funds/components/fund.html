@@ -1,4 +1,12 @@
 <div (click)="handleSelectFund(data.isin)">
-  Some other stuff:
-  {{data.name}}
+  <div class="row fundSummary">
+    <div class="col-md-8">{{data.name}}</div>
+    <div class="col-md-4">30%</div>
+ 
+  </div>
+  
+  <div *ngIf="showDetails" class="fundDetails">
+    fund details...
+  </div>
+
 </div>
