@@ -11,7 +11,7 @@ export class FundsComponent implements OnInit {
     funds: Array<Object>;
     isins: Array<String>;
     portfolio: String;
-    
+
     constructor(private fundService: FundService, private zone:NgZone) {
     }
 
@@ -27,13 +27,17 @@ export class FundsComponent implements OnInit {
     }
 
     handleSelectedFundEvent(isin) {
-	console.warn("Adding isin: ", this.isins);
 	this.isins.push(isin);
 
-	this.fundService.addFundToPortfolio(this.portfolio, isin, 1000)
-	    .then(data => {
+	this.fundService.getFundDetail(isin)
+	    .subscribe(data => {
 		console.warn(data);
 	    });
+	
+//	this.fundService.addFundToPortfolio(this.portfolio, isin, 1000)
+//	    .then(data => {
+//		console.warn(data);
+//	    });
     }
 
     handleSearchEvent(arg) {
@@ -47,4 +51,3 @@ export class FundsComponent implements OnInit {
 	    });	
     }
 }
-    
