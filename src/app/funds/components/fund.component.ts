@@ -12,6 +12,8 @@ import {Fund} from '../models/fund';
 export class FundComponent implements OnInit {
     @Input('data') data: Fund;
     @Output() selectevent: EventEmitter<any> = new EventEmitter();
+    @Output() addevent: EventEmitter<any> = new EventEmitter();
+
     showDetails: boolean = false;
     
     constructor() {
@@ -23,5 +25,10 @@ export class FundComponent implements OnInit {
     handleSelectFund(isin) {
 	this.showDetails = !this.showDetails;
 	this.selectevent.next(isin);
+    }
+
+    handleAddToPortfolio(isin) {
+	console.warn("[internla] handle add to portfolio");
+	this.addevent.next(isin);
     }
 }

@@ -9,7 +9,12 @@
       search results
       <ul>
 	<li>
-	  <fund [data]="fund" *ngFor="let fund of funds" (selectevent)="handleSelectedFundEvent($event)"></fund>
+	  <fund
+	     [data]="fund"
+	     *ngFor="let fund of funds"
+	     (selectevent)="handleSelectedFundEvent($event)"
+	     (addevent)="handleAddToPortfolio($event)">
+	  </fund>
 	</li>
 	<!-- <li class="card" *ngFor="let fund of funds"> -->
 	<!--   {{fund.name}} -->

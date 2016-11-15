@@ -26,18 +26,22 @@ export class FundsComponent implements OnInit {
 	    });	
     }
 
+
+    handleAddToPortfolio(isin) {
+	console.warn("adding to portolio..");
+	this.fundService.addFundToPortfolio(this.portfolio, isin, 1000)
+	    .then(data => {
+		console.warn(data);
+	    });
+    }
+
     handleSelectedFundEvent(isin) {
 	this.isins.push(isin);
 
 	this.fundService.getFundDetail(isin)
 	    .subscribe(data => {
 		console.warn(data);
-	    });
-	
-//	this.fundService.addFundToPortfolio(this.portfolio, isin, 1000)
-//	    .then(data => {
-//		console.warn(data);
-//	    });
+	    });	
     }
 
     handleSearchEvent(arg) {
