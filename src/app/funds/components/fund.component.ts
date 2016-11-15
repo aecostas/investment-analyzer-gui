@@ -8,6 +8,7 @@ import {Fund} from '../models/fund';
 @Component({
     selector: 'fund',
     templateUrl: './app/funds/components/fund.html'
+    styleUrls: ['./app/funds/components/fund.css']
 })
 export class FundComponent implements OnInit {
     @Input('data') data: Fund;
@@ -15,7 +16,7 @@ export class FundComponent implements OnInit {
     @Output() addevent: EventEmitter<any> = new EventEmitter();
 
     showDetails: boolean = false;
-    
+
     constructor() {
     }
 
@@ -27,8 +28,8 @@ export class FundComponent implements OnInit {
 	this.selectevent.next(isin);
     }
 
-    handleAddToPortfolio(isin) {
-	console.warn("[internla] handle add to portfolio");
+    handleAddToPortfolio(event, isin) {
+	event.stopPropagation();
 	this.addevent.next(isin);
     }
 }

@@ -1,13 +1,12 @@
-<div (click)="handleSelectFund(data.isin)">
+<div (click)="handleSelectFund(data.isin)" [class.selected]="showDetails">
+
   <div class="row fundSummary">
     <div class="col-md-8">{{data.name}}</div>
     <div class="col-md-4">30%</div>
-
   </div>
 
   <div *ngIf="showDetails" class="fundDetails">
-    <button type="button" (click)="handleAddToPortfolio(data.isin)"> Add to portfolio</button>
-
+    <button type="button" (click)="handleAddToPortfolio($event, data.isin)"> Add to portfolio</button>
   </div>
 
 </div>
