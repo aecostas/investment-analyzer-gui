@@ -1,4 +1,7 @@
-<div (click)="handleSelectFund(data.isin)" [class.selected]="showDetails">
+<div
+   (click)="handleClick(data.isin)"
+   (dblclick)="handleDblClick($event, data.isin)"
+   [class.selected]="showDetails">
 
   <div class="row fundSummary">
     <div class="col-md-8">{{data.name}}</div>

@@ -11,10 +11,10 @@ import {AppComponent} from "./app.component";
 import {TaskListComponent} from "./todo/components/task-list.component";
 import {AboutComponent} from "./about/components/about.component";
 import {TaskComponent} from "./todo/components/task.component";
-import {SearchComponent} from "./funds/components/search.component";
+import {SearchComponent} from "./funds/components/search/search.component";
 
 import {FundsComponent} from "./funds/components/funds.component";
-import {FundComponent} from "./funds/components/fund.component";
+import {FundComponent} from "./funds/components/fund/fund.component";
 
 import {FundService} from "./funds/services/fund.service";
 
