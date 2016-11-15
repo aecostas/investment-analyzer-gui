@@ -7,8 +7,8 @@ import {Fund} from '../models/fund';
 
 @Component({
     selector: 'fund',
-    templateUrl: './app/funds/components/fund.html'
-    styleUrls: ['./app/funds/components/fund.css']
+    templateUrl: './app/funds/components/fund/fund.html'
+    styleUrls: ['./app/funds/components/fund/fund.css']
 })
 export class FundComponent implements OnInit {
     @Input('data') data: Fund;

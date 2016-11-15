@@ -28,7 +28,6 @@ export class FundsComponent implements OnInit {
 
 
     handleAddToPortfolio(isin) {
-	console.warn("adding to portolio..");
 	this.fundService.addFundToPortfolio(this.portfolio, isin, 1000)
 	    .then(data => {
 		console.warn(data);

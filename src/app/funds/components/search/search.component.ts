@@ -7,8 +7,8 @@ import {Ng2SliderComponent} from 'ng2-slider-component/ng2-slider.component';
 
 @Component({
     selector: 'fund-search',
-    templateUrl: './app/funds/components/search.html',
-    styleUrls: ['./app/funds/components/search.css']
+    templateUrl: './app/funds/components/search/search.html',
+    styleUrls: ['./app/funds/components/search/search.css']
 })
 export class SearchComponent implements OnInit {
     @Output() searchevent: EventEmitter<any> = new EventEmitter();
