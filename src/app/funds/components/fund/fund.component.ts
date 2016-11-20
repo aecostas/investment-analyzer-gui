@@ -4,6 +4,8 @@ import {Output} from "@angular/core";
 import {OnInit} from "@angular/core";
 import {EventEmitter} from "@angular/core";
 import {Fund} from '../../models/fund';
+import {FundService} from '../../services/fund.service';
+
 
 @Component({
     selector: 'fund',
@@ -12,7 +14,6 @@ import {Fund} from '../../models/fund';
 })
 export class FundComponent implements OnInit {
     @Input('data') data: Fund;
-    @Output() selectevent: EventEmitter<any> = new EventEmitter();
     @Output() addevent: EventEmitter<any> = new EventEmitter();
 
     private timer: number = 0;
@@ -21,7 +22,7 @@ export class FundComponent implements OnInit {
     
     showDetails: boolean = false;
 
-    constructor() {
+    constructor(private fundService: FundService) {
     }
 
     ngOnInit() {
@@ -45,7 +46,13 @@ export class FundComponent implements OnInit {
     
     selectFund(isin) {
 	this.showDetails = !this.showDetails;
-	this.selectevent.next(isin);
+	
+	this.fundService.getFundDetail(isin)
+ 	    .subscribe(data => {
+		console.warn(data);
+	    });
+
+	
     }
 
     handleAddToPortfolio(event, isin) {

@@ -26,7 +26,6 @@ export class FundsComponent implements OnInit {
 	    });	
     }
 
-
     handleAddToPortfolio(isin) {
 	this.fundService.addFundToPortfolio(this.portfolio, isin, 1000)
 	    .then(data => {
@@ -34,14 +33,6 @@ export class FundsComponent implements OnInit {
 	    });
     }
 
-    handleSelectedFundEvent(isin) {
-	this.isins.push(isin);
-
-	this.fundService.getFundDetail(isin)
-	    .subscribe(data => {
-		console.warn(data);
-	    });	
-    }
 
     handleSearchEvent(arg) {
 	this.fundService.getFunds()
