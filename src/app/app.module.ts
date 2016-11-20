@@ -16,6 +16,9 @@ import {SearchComponent} from "./funds/components/search/search.component";
 import {FundsComponent} from "./funds/components/funds.component";
 import {FundComponent} from "./funds/components/fund/fund.component";
 
+import {ChartComponent} from "./funds/components/chart/chart.component";
+
+
 import {FundService} from "./funds/services/fund.service";
 
 
@@ -38,6 +41,7 @@ import {FormsModule} from "@angular/forms";
         AboutComponent,
 	FundsComponent,
 	FundComponent,
+	ChartComponent,
 	SearchComponent,
 	SlideAbleDirective,
 	Ng2StyledDirective,

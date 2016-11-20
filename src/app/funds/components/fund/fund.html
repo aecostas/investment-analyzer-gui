@@ -9,6 +9,9 @@
   </div>
 
   <div *ngIf="showDetails" class="fundDetails">
+    <chart [data]="details.regions"></chart>
+    <chart [data]="details.sectors"></chart>
+    
     <button type="button" (click)="handleAddToPortfolio($event, data.isin)"> Add to portfolio</button>
   </div>
 

@@ -6,7 +6,6 @@ import {EventEmitter} from "@angular/core";
 import {Fund} from '../../models/fund';
 import {FundService} from '../../services/fund.service';
 
-
 @Component({
     selector: 'fund',
     templateUrl: './app/funds/components/fund/fund.html',
@@ -21,7 +20,8 @@ export class FundComponent implements OnInit {
     private prevent: boolean = false;
     
     showDetails: boolean = false;
-
+    details: Object = {};
+    
     constructor(private fundService: FundService) {
     }
 
@@ -46,19 +46,16 @@ export class FundComponent implements OnInit {
     
     selectFund(isin) {
 	this.showDetails = !this.showDetails;
-	
+
 	this.fundService.getFundDetail(isin)
  	    .subscribe(data => {
-		console.warn(data);
+		this.details = data;
 	    });
-
-	
     }
 
     handleAddToPortfolio(event, isin) {
 	event.stopPropagation();
 	this.addevent.next(isin);
     }
-
 
 }
