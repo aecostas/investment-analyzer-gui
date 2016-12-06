@@ -2,6 +2,7 @@ import {NgModule}      from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpModule} from '@angular/http';
 import {JsonpModule} from '@angular/http';
+import { ChartsModule } from 'ng2-charts/ng2-charts';
 import {Ng2BootstrapModule} from 'ng2-bootstrap/ng2-bootstrap';
 import {Ng2SliderComponent} from 'ng2-slider-component/ng2-slider.component';
 import { Ng2StyledDirective } from 'ng2-styled-directive/ng2-styled.directive';
@@ -18,9 +19,7 @@ import {FundComponent} from "./funds/components/fund/fund.component";
 
 import {ChartComponent} from "./funds/components/chart/chart.component";
 
-
 import {FundService} from "./funds/services/fund.service";
-
 
 import {routing, appRoutingProviders} from './app.routing';
 import {FormsModule} from "@angular/forms";
@@ -32,7 +31,8 @@ import {FormsModule} from "@angular/forms";
 	HttpModule,
 	JsonpModule,
         routing,
-	Ng2BootstrapModule
+	Ng2BootstrapModule,
+	ChartsModule
     ],
     declarations: [
         AppComponent,

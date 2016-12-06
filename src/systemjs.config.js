@@ -3,7 +3,8 @@
         paths: {
             // paths serve as alias
             'npm:': 'lib/',
-	    "ng2-bootstrap":   "node_modules/ng2-bootstrap"
+	    'ng2-bootstrap': 'node_modules/ng2-bootstrap',
+	    'ng2-charts': 'node_modules/ng2-charts'
         },
         // map tells the System loader where to look for things
         map: {
@@ -21,13 +22,19 @@
             // other libraries
 	    'moment': 'npm:moment/moment.js',
 	    'ng2-bootstrap/ng2-bootstrap': 'npm:ng2-bootstrap/bundles/ng2-bootstrap.umd.js',
-	    'ng2-slider-component' :      'npm:ng2-slider-component',
-	    'ng2-slideable-directive':    'npm:ng2-slideable-directive',
-	    'ng2-styled-directive':       'npm:ng2-styled-directive',
-            'rxjs': 'npm:rxjs'
+	    'ng2-slider-component' : 'npm:ng2-slider-component',
+	    'ng2-slideable-directive': 'npm:ng2-slideable-directive',
+	    'ng2-styled-directive': 'npm:ng2-styled-directive',
+            'rxjs': 'npm:rxjs',
+	    'ng2-charts': 'npm:ng2-charts/bundles/'
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
+	    "ng2-charts":
+	    {
+		main: './ng2-charts.js',
+		defaultExtension: "js"
+	    },
             app: {
                 main: './main.js',
                 defaultExtension: 'js'

@@ -60,6 +60,7 @@ gulp.task("libs", () => {
         'zone.js/dist/**',
         '@angular/**/bundles/**',
 	'ng2-bootstrap/**/bundles/**',
+	'ng2-charts/**/bundles/**',
 	'moment/moment.js',
 	'ng2-slider-component/**',
 	'ng2-slideable-directive/**',
