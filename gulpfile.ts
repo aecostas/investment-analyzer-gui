@@ -61,7 +61,9 @@ gulp.task("libs", () => {
         '@angular/**/bundles/**',
 	'ng2-bootstrap/**/bundles/**',
 	'ng2-charts/**/bundles/**',
+	'ng2-charts/**/components/**',
 	'moment/moment.js',
+	'chart.js/dist/Chart.min.js',
 	'ng2-slider-component/**',
 	'ng2-slideable-directive/**',
 	'ng2-styled-directive/**'
